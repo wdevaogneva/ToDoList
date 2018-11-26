@@ -91,8 +91,10 @@ button:hover
 		color: #000
 		@include roboto-b
 		font-size: 20px
+		transition: All 0.2s
 		&:hover
 			background-color: rgba(#EE82EE, 0.1)
+			transition: All 0.2s
 
 
 .todotable
@@ -106,7 +108,7 @@ button:hover
 		color: #9370DB
 		font-size: 20px
 		font-style: italic
-		line-height: 28px
+		line-height: 32px
 	th.th1
 		width: 30%	
 	th.th3
@@ -114,8 +116,22 @@ button:hover
 	td
 		@include roboto-l
 		font-style: normal
+
+		.textarea:focus
+		  border: 1px solid #A9A9A9
+		  background: white
+		  resize: both
+		.textarea
+		  background: 0
+		  border: 0
+		  resize: none
+		  overflow: auto
+		  width: 90%
+		  text-align: center
 	td.td1
 		@include roboto-b
+	td.td3
+		padding: 5px
 
 .button
 	width: 40px
@@ -125,10 +141,22 @@ button:hover
 		margin-right: 20px
 		background: url(../img/check_false.png) center no-repeat
 			size: cover
+		transition: All 0.2s
+		&:hover
+			background: url(../img/check_black.png) center no-repeat
+				size: cover
+			transition: All 0.2s
+		&__true
+			background: url(../img/check_true.png) center no-repeat
+				size: cover
 	&_delete
 		background: url(../img/garbage.png) center no-repeat
 			size: cover
-
+		transition: All 0.2s
+		&:hover
+			background: url(../img/garbage_black.png) center no-repeat
+				size: cover
+			transition: All 0.2s
 
 	
 

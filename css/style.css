@@ -99,10 +99,14 @@ button:hover {
   color: #000;
   font-family: "Roboto Bold", sans-serif;
   font-size: 20px;
+  -webkit-transition: All 0.2s;
+  transition: All 0.2s;
 }
 
 .main_btn:hover {
   background-color: rgba(238, 130, 238, 0.1);
+  -webkit-transition: All 0.2s;
+  transition: All 0.2s;
 }
 
 .todotable {
@@ -121,7 +125,7 @@ button:hover {
   color: #9370DB;
   font-size: 20px;
   font-style: italic;
-  line-height: 28px;
+  line-height: 32px;
 }
 
 .todotable th.th1 {
@@ -137,8 +141,27 @@ button:hover {
   font-style: normal;
 }
 
+.todotable td .textarea:focus {
+  border: 1px solid #A9A9A9;
+  background: white;
+  resize: both;
+}
+
+.todotable td .textarea {
+  background: 0;
+  border: 0;
+  resize: none;
+  overflow: auto;
+  width: 90%;
+  text-align: center;
+}
+
 .todotable td.td1 {
   font-family: "Roboto Bold", sans-serif;
+}
+
+.todotable td.td3 {
+  padding: 5px;
 }
 
 .button {
@@ -151,9 +174,32 @@ button:hover {
   margin-right: 20px;
   background: url("../img/check_false.png") center no-repeat;
   background-size: cover;
+  -webkit-transition: All 0.2s;
+  transition: All 0.2s;
+}
+
+.button_check:hover {
+  background: url("../img/check_black.png") center no-repeat;
+  background-size: cover;
+  -webkit-transition: All 0.2s;
+  transition: All 0.2s;
+}
+
+.button_check__true {
+  background: url("../img/check_true.png") center no-repeat;
+  background-size: cover;
 }
 
 .button_delete {
   background: url("../img/garbage.png") center no-repeat;
   background-size: cover;
+  -webkit-transition: All 0.2s;
+  transition: All 0.2s;
+}
+
+.button_delete:hover {
+  background: url("../img/garbage_black.png") center no-repeat;
+  background-size: cover;
+  -webkit-transition: All 0.2s;
+  transition: All 0.2s;
 }
