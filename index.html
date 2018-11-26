@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   	<title>ToDoList</title>
+  </head>
+  
+  <body>
+	<div class="main" id="main">
+	<div class="container">
+		<h1 class="main_title">My ToDo</h1>
+		<div class="row">
+			<div class="col-md-6 ">
+				<button class="main_btn center-block" id="btn2">
+					Sort by title
+				</button>
+			</div>
+			<div class="col-md-6 ">
+				<button class="main_btn center-block" id="btn1">
+					Add new
+				</button>
+			</div>
+		</div>
+		<div class="main_field">
+			<!-- <input type="button" value="+" onclick="addItem()"/> -->
+			<table id="todotable" class="todotable">
+		    <thead>
+		        <tr>
+		        	<th class="th1">Title</th>
+		        	<th class="th2">Description</th>
+		        	<th class="th3">Check</th>
+		        </tr>
+		    </thead>
+		    <tbody id="content">
+		    	<tr class="tr">
+		        	<td class="td1">Doing HomeTask</td>
+		        	<td class="td2">Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTas</td>
+		        	<td class="td3">
+		        		<button class="button button_check"></button>
+								<button class="button button_delete"></button>
+		        	</td>
+		        </tr>
+		        <tr class="tr">
+		        	<td class="td1">Doing HomeTask</td>
+		        	<td class="td2">Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTas</td>
+		        	<td class="td3">
+		        		<button class="button button_check"></button>
+								<button class="button button_delete"></button>
+		        	</td>
+		        </tr>
+		        <tr class="tr">
+		        	<td class="td1">Doing HomeTask</td>
+		        	<td class="td2">Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTas</td>
+		        	<td class="td3">
+		        		<button class="button button_check"></button>
+								<button class="button button_delete"></button>
+		        	</td>
+		        </tr>
+		        <tr class="tr">
+		        	<td class="td1">Doing HomeTask</td>
+		        	<td class="td2">Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTas</td>
+		        	<td class="td3">
+		        		<button class="button button_check"></button>
+								<button class="button button_delete"></button>
+		        	</td>
+		        </tr>
+		        <tr class="tr">
+		        	<td class="td1">Doing HomeTask</td>
+		        	<td class="td2">Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTas</td>
+		        	<td class="td3">
+		        		<button class="button button_check"></button>
+								<button class="button button_delete"></button>
+		        	</td>
+		        </tr>
+		        <tr class="tr">
+		        	<td class="td1">Doing HomeTask</td>
+		        	<td class="td2">Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTas</td>
+		        	<td class="td3">
+		        		<button class="button button_check"></button>
+								<button class="button button_delete"></button>
+		        	</td>
+		        </tr>
+		        <tr class="tr">
+		        	<td class="td1">Doing HomeTask</td>
+		        	<td class="td2">Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask  Doing HomeTask Doing HomeTaskDoing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTask Doing HomeTas</td>
+		        	<td class="td3">
+		        		<button class="button button_check"></button>
+								<button class="button button_delete"></button>
+		        	</td>
+		        </tr>
+		    </tbody>
+			</table>
+		</div>
+		
+	</div>
+	</div>
+	
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/script.js"></script>
+  </body>
+</html>
+

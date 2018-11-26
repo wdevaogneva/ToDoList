@@ -1,0 +1,137 @@
+@font-face 
+    font-family: "Roboto Bold"
+    src: url("../fonts/Roboto-Bold.eot")
+    src: url("../fonts/Roboto-Bold.eot?#iefix") 
+    src: url("../fonts/Roboto-Bold.woff2")
+    src: url("../fonts/Roboto-Bold.woff")
+    src: url("../fonts/Roboto-Bold.ttf")
+    font:
+        weight: bold
+        style: normal
+
+@font-face 
+    font-family: "Roboto"
+    src: url("../fonts/Roboto-Regular.eot")
+    src: url("../fonts/Roboto-Regular.eot?#iefix")
+    src: url("../fonts/Roboto-Regular.woff2")
+    src: url("../fonts/Roboto-Regular.woff")
+    src: url("../fonts/Roboto-Regular.ttf")
+    font:
+        weight: normal
+        style: normal
+
+@font-face 
+    font-family: "Roboto Light"
+    src: url("../fonts/Roboto-Light.eot")
+    src: url("../fonts/Roboto-Light.eot?#iefix")
+    src: url("../fonts/Roboto-Light.woff2")
+    src: url("../fonts/Roboto-Light.woff")
+    src: url("../fonts/Roboto-Light.ttf")
+    font:
+        weight: 300
+        style: normal
+
+=roboto
+    font-family: "Roboto", sans-serif
+
+=roboto-b
+    font-family: "Roboto Bold", sans-serif
+
+=roboto-l
+    font-family: "Roboto Light", sans-serif        
+
+*
+	box-sizing: border-box
+
+body
+	margin: 0
+	background: url(../img/bg.jpg) center no-repeat fixed
+		size: cover
+
+input, button, textarea, select, option
+	&:focus
+		outline: none
+
+input:invalid
+	box-shadow: none
+
+button:hover
+	cursor: pointer
+
+.hidden
+	display: none
+
+.main
+	height: 85rem
+	&_title
+		margin-top: 40px
+		color: #9370DB
+		@include roboto-b
+		font-size: 60px
+		line-height: 64px
+		text-align: center
+		letter-spacing: 2px
+
+	&_field
+	  height: 40rem
+	  background-color: rgba(#ffffff, 0.3)
+	  box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.5)
+	  margin-top: 20px
+	  padding-bottom: 5rem
+	  border: 3px solid #9370DB
+	  overflow-y: auto
+	&_btn
+		width: 15rem
+		height: 5rem
+		margin-top: 2rem
+		border: 3px solid #9370DB
+		border-radius: 10px
+		background-color: rgba(#ffffff, 0.4)
+		outline: none
+		color: #000
+		@include roboto-b
+		font-size: 20px
+		&:hover
+			background-color: rgba(#EE82EE, 0.1)
+
+
+.todotable
+	border: 1px solid
+	width: 100%
+	th, td
+		border: 1px solid #000000
+		text-align: center
+	th
+		@include roboto-b
+		color: #9370DB
+		font-size: 20px
+		font-style: italic
+		line-height: 28px
+	th.th1
+		width: 30%	
+	th.th3
+		width: 15%
+	td
+		@include roboto-l
+		font-style: normal
+	td.td1
+		@include roboto-b
+
+.button
+	width: 40px
+	height: 40px
+	border: none
+	&_check
+		margin-right: 20px
+		background: url(../img/check_false.png) center no-repeat
+			size: cover
+	&_delete
+		background: url(../img/garbage.png) center no-repeat
+			size: cover
+
+
+	
+
+
+
+

@@ -1,0 +1,159 @@
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../fonts/Roboto-Bold.eot");
+  src: url("../fonts/Roboto-Bold.eot?#iefix");
+  src: url("../fonts/Roboto-Bold.woff2");
+  src: url("../fonts/Roboto-Bold.woff");
+  src: url("../fonts/Roboto-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.eot");
+  src: url("../fonts/Roboto-Regular.eot?#iefix");
+  src: url("../fonts/Roboto-Regular.woff2");
+  src: url("../fonts/Roboto-Regular.woff");
+  src: url("../fonts/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../fonts/Roboto-Light.eot");
+  src: url("../fonts/Roboto-Light.eot?#iefix");
+  src: url("../fonts/Roboto-Light.woff2");
+  src: url("../fonts/Roboto-Light.woff");
+  src: url("../fonts/Roboto-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: url("../img/bg.jpg") center no-repeat fixed;
+  background-size: cover;
+}
+
+input:focus,
+button:focus,
+textarea:focus,
+select:focus,
+option:focus {
+  outline: none;
+}
+
+input:invalid {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.main {
+  height: 85rem;
+}
+
+.main_title {
+  margin-top: 40px;
+  color: #9370DB;
+  font-family: "Roboto Bold", sans-serif;
+  font-size: 60px;
+  line-height: 64px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.main_field {
+  height: 40rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  padding-bottom: 5rem;
+  border: 3px solid #9370DB;
+  overflow-y: auto;
+}
+
+.main_btn {
+  width: 15rem;
+  height: 5rem;
+  margin-top: 2rem;
+  border: 3px solid #9370DB;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  outline: none;
+  color: #000;
+  font-family: "Roboto Bold", sans-serif;
+  font-size: 20px;
+}
+
+.main_btn:hover {
+  background-color: rgba(238, 130, 238, 0.1);
+}
+
+.todotable {
+  border: 1px solid;
+  width: 100%;
+}
+
+.todotable th,
+.todotable td {
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+.todotable th {
+  font-family: "Roboto Bold", sans-serif;
+  color: #9370DB;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 28px;
+}
+
+.todotable th.th1 {
+  width: 30%;
+}
+
+.todotable th.th3 {
+  width: 15%;
+}
+
+.todotable td {
+  font-family: "Roboto Light", sans-serif;
+  font-style: normal;
+}
+
+.todotable td.td1 {
+  font-family: "Roboto Bold", sans-serif;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.button_check {
+  margin-right: 20px;
+  background: url("../img/check_false.png") center no-repeat;
+  background-size: cover;
+}
+
+.button_delete {
+  background: url("../img/garbage.png") center no-repeat;
+  background-size: cover;
+}
