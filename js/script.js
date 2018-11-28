@@ -1,5 +1,16 @@
 window.addEventListener('DOMContentLoaded', function(){
 
+    //load from LocalStorage
+    let localValue = localStorage.getItem("ToDoList"),
+        table = document.querySelector('#content');
+
+    table.innerHTML = localValue;
+
+    for (let i = 0; i < table.childNodes.length; i++) {
+        table.childNodes[i].childNodes[0].childNodes[0].value = localStorage.getItem("ToDo_tr"+i+"td_0");
+        table.childNodes[i].childNodes[1].childNodes[0].value = localStorage.getItem("ToDo_tr"+i+"td_1");
+    }
+   
     /*window.onresize = function () {
         
         let w1 = getComputedStyle(textarea[0]).width,
@@ -24,17 +35,17 @@ window.addEventListener('DOMContentLoaded', function(){
                 textarea.value = textarea.value.replace(reg1, "$1\r\n$2");
                 for (var i = 0, textareaValue = textarea.value; textareaValue.search(reg2) >= 0;) {
                     i++;
-                    textareaValue = textareaValue.replace(reg2, "")
+                    textareaValue = textareaValue.replace(reg2, "");
                 }
                 i+= 2;
                 if (i < textareaRows) i = textareaRows;
-                textarea.rows = i-1
-            }
+                textarea.rows = i-1;
+            };
         }
-    };
+    }
 
     //Check button
-    let table = document.querySelector('#content');
+    //let table = document.querySelector('#content');
 
     table.addEventListener('click', function(event){
         if (event.target && event.target.matches('button.button_check')){
@@ -75,7 +86,7 @@ window.addEventListener('DOMContentLoaded', function(){
     table.addEventListener('click', function(event){
         if (event.target && event.target.matches('button.button_delete')){
             let currentTr = event.target.parentNode.parentNode;
-            table.removeChild(currentTr)
+            table.removeChild(currentTr);
 
         }
     });
@@ -103,8 +114,33 @@ window.addEventListener('DOMContentLoaded', function(){
         }
 
         todotable.appendChild(table);
+        console.log(document.getElementById("content").innerHTML);
 
     });
 
+
+});
+
+//save in LocalStorage
+
+window.addEventListener('beforeunload', function(){
+    try
+    {
+        let tb = document.getElementById("content");
+        if (tb.childNodes.length > 0) {
+            localStorage.setItem("ToDoList", tb.innerHTML);
+            for (let i = 0; i < tb.childNodes.length; i++) {
+                localStorage.setItem("ToDo_tr"+i+"td_0", tb.childNodes[i].childNodes[0].childNodes[0].value);
+                localStorage.setItem("ToDo_tr"+i+"td_1", tb.childNodes[i].childNodes[1].childNodes[0].value);    
+            }
+        } else {
+            localStorage.clear();
+        }
+    }
+    catch (e)
+    {
+        console.log("some problems");
+    }
+        
 
 });
