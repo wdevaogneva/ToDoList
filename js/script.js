@@ -80,4 +80,31 @@ window.addEventListener('DOMContentLoaded', function(){
         }
     });
 
+    //sort by title
+    let sortByTitle = document.querySelector('#sort'),
+        todotable = document.querySelector('#todotable');
+
+    sortByTitle.addEventListener('click', function(){
+        let rowsArray = [].slice.call(table.rows),
+            compare = function(rowA, rowB) {
+                if (rowA.childNodes[0].childNodes[0].value > rowB.childNodes[0].childNodes[0].value) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            };
+
+        rowsArray.sort(compare);
+
+        todotable.removeChild(table);
+
+        for (let i = 0; i < rowsArray.length; i++) {
+            table.appendChild(rowsArray[i]);
+        }
+
+        todotable.appendChild(table);
+
+    });
+
+
 });
