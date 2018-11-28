@@ -44,9 +44,7 @@ body {
 
 input:focus,
 button:focus,
-textarea:focus,
-select:focus,
-option:focus {
+textarea:focus {
   outline: none;
 }
 
@@ -57,10 +55,6 @@ input:invalid {
 
 button:hover {
   cursor: pointer;
-}
-
-.hidden {
-  display: none;
 }
 
 .main {
@@ -202,4 +196,90 @@ button:hover {
   background-size: cover;
   -webkit-transition: All 0.2s;
   transition: All 0.2s;
+}
+
+@media (max-width: 991px) {
+  .main {
+    height: 85rem;
+  }
+
+  .main_title {
+    margin-top: 20px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .main_btn {
+    height: 4rem;
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  .main_btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .todotable th {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .todotable td .textarea {
+    font-size: 14px;
+  }
+
+  .button {
+    width: 25px;
+    height: 25px;
+  }
+
+  .button_check {
+    margin-right: 10px;
+  }
+
+  .button_check:hover {
+    background: url("../img/check_false.png") center no-repeat;
+    background-size: cover;
+  }
+
+  .button_delete:hover {
+    background: url("../img/garbage.png") center no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 767px) {
+  .todotable th {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .todotable td .textarea {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .main_btn {
+    width: 12rem;
+    height: 3rem;
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  .todotable th {
+    padding: 3px;
+    font-size: 12px;
+    line-height: 16px;
+    word-wrap: break-word;
+  }
+
+  .todotable td .textarea {
+    font-size: 12px;
+  }
+
+  .button_check {
+    margin-right: 4px;
+    margin-left: 4px;
+  }
 }

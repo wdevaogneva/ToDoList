@@ -5,23 +5,13 @@ window.addEventListener('DOMContentLoaded', function(){
         table = document.querySelector('#content');
 
     table.innerHTML = localValue;
-
-    for (let i = 0; i < table.childNodes.length; i++) {
-        table.childNodes[i].childNodes[0].childNodes[0].value = localStorage.getItem("ToDo_tr"+i+"td_0");
-        table.childNodes[i].childNodes[1].childNodes[0].value = localStorage.getItem("ToDo_tr"+i+"td_1");
+    if (localValue) {
+        for (let i = 0; i < table.childNodes.length; i++) {
+            table.childNodes[i].childNodes[0].childNodes[0].value = localStorage.getItem("ToDo_tr"+i+"td_0");
+            table.childNodes[i].childNodes[1].childNodes[0].value = localStorage.getItem("ToDo_tr"+i+"td_1");
+        }
     }
-   
-    /*window.onresize = function () {
-        
-        let w1 = getComputedStyle(textarea[0]).width,
-            w2 = getComputedStyle(textarea[1]).width;
-        textarea[0].cols = parseInt(w1)/8;
-        textarea[1].cols = parseInt(w1)/8;
-        console.log(textarea[0].cols);
-        console.log(textarea[1].cols);
-        flexibleTextarea(textarea[0]);
-        flexibleTextarea(textarea[1]);
-    };*/
+
 
     //Textarea resize
     function flexibleTextarea(textarea){
@@ -45,7 +35,6 @@ window.addEventListener('DOMContentLoaded', function(){
     }
 
     //Check button
-    //let table = document.querySelector('#content');
 
     table.addEventListener('click', function(event){
         if (event.target && event.target.matches('button.button_check')){
@@ -67,13 +56,18 @@ window.addEventListener('DOMContentLoaded', function(){
     let addNew = document.querySelector('#addNew');
 
     addNew.addEventListener('click', function(event){
-        let newTr = document.createElement('tr');
+        let newTr = document.createElement('tr'),
+            ths = document.querySelectorAll('th'),
+            col_1 = Math.floor(parseInt(getComputedStyle(ths[0]).width)*0.9/8),
+            col_2 = Math.floor(parseInt(getComputedStyle(ths[1]).width)*0.9/8);
+
         newTr.classList.add("tr");
         table.appendChild(newTr);
+
         newTr.innerHTML = '<td class="td1">'+
-        '<textarea class="textarea" placeholder="task title" id="textarea_1" rows="1" cols="40"></textarea>'+
+        '<textarea class="textarea" placeholder="task title" id="textarea_1" rows="1" cols="'+col_1+'"></textarea>'+
         '</td><td class="td2">'+
-        '<textarea class="textarea"placeholder="task description" id="textarea_2" rows="1" cols="74"></textarea>'+
+        '<textarea class="textarea"placeholder="task description" id="textarea_2" rows="1" cols="'+col_2+'"></textarea>'+
         '</td><td class="td3"><button class="button button_check"></button>'+
         '<button class="button button_delete"></button></td>';
         let textarea = newTr.querySelectorAll('.textarea');
@@ -114,10 +108,8 @@ window.addEventListener('DOMContentLoaded', function(){
         }
 
         todotable.appendChild(table);
-        console.log(document.getElementById("content").innerHTML);
 
     });
-
 
 });
 
@@ -126,15 +118,24 @@ window.addEventListener('DOMContentLoaded', function(){
 window.addEventListener('beforeunload', function(){
     try
     {
-        let tb = document.getElementById("content");
+        let tb = document.getElementById("content"),
+            mas = [];
         if (tb.childNodes.length > 0) {
             localStorage.setItem("ToDoList", tb.innerHTML);
+            mas.push("ToDoList");
             for (let i = 0; i < tb.childNodes.length; i++) {
                 localStorage.setItem("ToDo_tr"+i+"td_0", tb.childNodes[i].childNodes[0].childNodes[0].value);
-                localStorage.setItem("ToDo_tr"+i+"td_1", tb.childNodes[i].childNodes[1].childNodes[0].value);    
+                mas.push("ToDo_tr"+i+"td_0");
+                localStorage.setItem("ToDo_tr"+i+"td_1", tb.childNodes[i].childNodes[1].childNodes[0].value);
+                mas.push("ToDo_tr"+i+"td_1");   
             }
+            localStorage.setItem("mas", mas);
         } else {
-            localStorage.clear();
+            let m = localStorage.getItem("mas").split(',');
+            for (let i = 0; i < m.length; i++) {
+                localStorage.removeItem(m[i]);
+            }
+            localStorage.removeItem("mas");
         }
     }
     catch (e)

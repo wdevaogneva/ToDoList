@@ -48,7 +48,7 @@ body
 	background: url(../img/bg.jpg) center no-repeat fixed
 		size: cover
 
-input, button, textarea, select, option
+input, button, textarea
 	&:focus
 		outline: none
 
@@ -57,9 +57,6 @@ input:invalid
 
 button:hover
 	cursor: pointer
-
-.hidden
-	display: none
 
 .main
 	height: 85rem
@@ -157,6 +154,71 @@ button:hover
 			background: url(../img/garbage_black.png) center no-repeat
 				size: cover
 			transition: All 0.2s
+
+@media (max-width: 991px)
+	.main
+		height: 85rem
+		&_title
+			margin-top: 20px
+			font-size: 30px
+			line-height: 34px
+		&_btn
+			height: 4rem
+			margin-top: 0
+			font-size: 14px
+			&:hover
+				background-color: rgba(#ffffff, 0.4)
+
+	.todotable
+		th
+			font-size: 16px
+			line-height: 24px
+		td
+			.textarea
+				font-size: 14px
+
+	.button
+		width: 25px
+		height: 25px
+		&_check
+			margin-right: 10px
+			&:hover
+				background: url(../img/check_false.png) center no-repeat
+					size: cover
+		&_delete:hover
+			background: url(../img/garbage.png) center no-repeat
+				size: cover
+
+@media (max-width: 767px)
+	.todotable
+		th
+			font-size: 14px
+			line-height: 20px
+		td
+			.textarea
+				font-size: 12px
+
+@media (max-width: 575px)
+	.main
+		&_btn
+			width: 12rem
+			height: 3rem
+			margin-top: 0
+			font-size: 14px
+	.todotable
+		th
+			padding: 3px
+			font-size: 12px
+			line-height: 16px
+			word-wrap: break-word
+		td
+			.textarea
+				font-size: 12px
+	.button
+		&_check
+			margin-right: 4px
+			margin-left: 4px
+
 
 	
 
